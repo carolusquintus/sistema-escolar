@@ -16,13 +16,21 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-jooq'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-    testImplementation 'org.springframework.security:spring-security-test'
-    testImplementation 'org.testcontainers:junit-jupiter'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security',
+                   'org.springframework.boot:spring-boot-starter-jdbc',
+                   'org.springframework.boot:spring-boot-starter-web',
+                   'org.springframework.boot:spring-boot-starter-thymeleaf',
+                   'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    runtimeOnly 'org.postgresql:postgresql'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test',
+                       'org.springframework.boot:spring-boot-testcontainers',
+                       'org.springframework.security:spring-security-test',
+                       'org.testcontainers:junit-jupiter'
 }
 
 tasks.named('test') {

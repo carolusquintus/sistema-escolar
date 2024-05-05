@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  sistema-escolar-db:
+    container_name: sistema-escolar-db
+    image: 'postgres:13.1-alpine'
+    ports:
+      - 5555:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=
+    volumes:
+      - sistema-escolar-db-data:/var/lib/postgresql/data
+    networks:
+      - sistema-escolar-network
+
+networks:
+  sistema-escolar-network:
+    name: sistema-escolar-network
+
+volumes:
+  sistema-escolar-db-data:
+    name: sistema-escolar-db-data

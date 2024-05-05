@@ -1,0 +1,15 @@
+server:
+    port: 8081
+
+spring:
+    application:
+        name: sistema-escolar
+    datasource:
+        url: jdbc:postgresql://localhost:5555/postgres?currentSchema=sistema_escolar
+        username: director_sistema_escolar
+        password: yEcu0vvc3UNcm2M67O46
+
+logging:
+    level:
+        org.springframework: INFO
+        root: INFO
