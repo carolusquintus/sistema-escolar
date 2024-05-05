@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/fragments/base}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="icon" th:href="@{/images/sistema-escolar.svg}"/>
     <title th:text="#{login.title}"/>
 
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/sign-in.css}"/>
 </head>
 <body class="text-center">
 
-<form class="form-signin" th:action="@{/login}" method="post">
-    <img class="mb-4" th:src="@{/images/sistema-escolar.svg}" width="120" height="120"/>
-    <h1 class="h2 mb-3 font-weight-bold" th:text="#{title}"/>
+<section layout:fragment="content">
+    <form class="form-signin" th:action="@{/login}" method="post">
+        <img class="mb-4" th:src="@{/images/sistema-escolar.svg}" width="120" height="120"/>
+        <h1 class="h2 mb-3 font-weight-bold" th:text="#{title}"/>
 
-    <label for="inputUser" class="sr-only" th:text="#{login.user}"/>
-    <input name="username" type="text" id="inputUser" class="form-control" th:placeholder="#{login.user}"
-           th:oninvalid="|this.setCustomValidity('#{login.input.valid}')|"
-           th:oninput="|setCustomValidity('')|" required autofocus/>
+        <label for="inputUser" class="sr-only" th:text="#{login.user}"/>
+        <input name="username" type="text" id="inputUser" class="form-control" th:placeholder="#{login.user}"
+               th:oninvalid="|this.setCustomValidity('#{login.input.valid}')|"
+               th:oninput="|setCustomValidity('')|" required autofocus/>
 
-    <label for="inputPassword" class="sr-only" th:text="#{login.password}"/>
-    <input name="password" type="password" id="inputPassword" class="form-control" th:placeholder="#{login.password}"
-           th:oninvalid="|this.setCustomValidity('#{login.input.valid}')|"
-           th:oninput="|setCustomValidity('')|" required autofocus/>
+        <label for="inputPassword" class="sr-only" th:text="#{login.password}"/>
+        <input name="password" type="password" id="inputPassword" class="form-control"
+               th:placeholder="#{login.password}"
+               th:oninvalid="|this.setCustomValidity('#{login.input.valid}')|"
+               th:oninput="|setCustomValidity('')|" required autofocus/>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.button.submit}"/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.button.submit}"/>
 
-    <div class="h5 text-danger" th:if="${param.error}" th:text="#{login.error}"/>
-    <div class="h5 text-info" th:if="${param.logout}" th:text="#{login.logout}"/>
-</form>
+        <div class="h5 text-danger" th:if="${param.error}" th:text="#{login.error}"/>
+        <div class="h5 text-info" th:if="${param.logout}" th:text="#{login.logout}"/>
+    </form>
+</section>
 
 </body>
 </html>

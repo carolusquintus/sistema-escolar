@@ -22,7 +22,8 @@ dependencies {
                    'org.springframework.boot:spring-boot-starter-jdbc',
                    'org.springframework.boot:spring-boot-starter-web',
                    'org.springframework.boot:spring-boot-starter-thymeleaf',
-                   'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+                   'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE',
+                   'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
     runtimeOnly 'org.postgresql:postgresql'
