@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{/fragments/base}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" th:href="@{/images/sistema-escolar.svg}"/>
     <title th:text="#{login.title}"/>
 
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/sign-in.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
 </head>
 <body>
 
-<section layout:fragment="content">
+<div class="container">
     <form class="form-signin" th:action="@{/login}" method="post">
         <div class="text-center mb-4">
             <img class="mb-4" th:src="@{/images/sistema-escolar.svg}" width="120" height="120"/>
@@ -39,7 +43,9 @@
             <div class="h5 text-info" th:if="${param.logout}" th:text="#{login.logout}"/>
         </div>
     </form>
-</section>
+</div>
+
+<footer th:replace="~{/fragments/footer::footer}"></footer>
 
 </body>
 </html>
