@@ -8,6 +8,9 @@ spring:
         url: jdbc:postgresql://localhost:5555/postgres?currentSchema=sistema_escolar
         username: director_sistema_escolar
         password: yEcu0vvc3UNcm2M67O46
+    jpa:
+      hibernate:
+          ddl-auto: none
 
 logging:
     level:
