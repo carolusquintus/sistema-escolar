@@ -1,6 +1,7 @@
 package dev.carm.sistemaescolar.controller;
 
 import dev.carm.sistemaescolar.service.MenuService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +14,9 @@ public class HomeController {
     private final MenuService service;
 
     @RequestMapping("/")
-    public String viewHomePage(Model model) {
+    public String viewHomePage(Model model, HttpSession session) {
         var menu = service.listMenu();
-        model.addAttribute("menu", menu);
+        session.setAttribute("menu", menu);
 
         return "index";
     }

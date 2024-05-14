@@ -1,4 +1,4 @@
-package dev.carm.sistemaescolar.entities;
+package dev.carm.sistemaescolar.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,9 +12,9 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 public class Menu {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    Long id;
-    Long parentId;
-    String name;
-    String path;
-    Boolean active;
+    private Long id;
+    private Long parentId;
+    private String name;
+    private String path;
+    private Boolean active;
 }

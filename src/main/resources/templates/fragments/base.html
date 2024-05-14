@@ -24,7 +24,7 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item" th:each="item : ${menu}">
+            <li class="nav-item" th:each="item : ${session.menu}">
                 <a class="nav-link" th:classappend="${item.active ? 'active' : ''}" th:href="${item.path}" th:text="${item.name}"></a>
             </li>
 <!--            <li class="nav-item active">-->

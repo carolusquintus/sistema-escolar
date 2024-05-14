@@ -1,7 +1,7 @@
 package dev.carm.sistemaescolar.mapper;
 
 import dev.carm.sistemaescolar.dto.MenuDto;
-import dev.carm.sistemaescolar.entities.Menu;
+import dev.carm.sistemaescolar.entity.Menu;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
