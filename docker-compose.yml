@@ -13,6 +13,23 @@ services:
       - sistema-escolar-db-data:/var/lib/postgresql/data
     networks:
       - sistema-escolar-network
+  sistema-escolar-app:
+    container_name: sistema-escolar-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PACKAGE: ${SE_APP_JAR}
+        TYPE: jar
+    image: ${DOCKER_USER}/sistema-escolar-app
+    depends_on:
+      - sistema-escolar-db
+    ports:
+      - 80:8081
+    volumes:
+      - sistema-escolar-app-data:/tmp
+    networks:
+      - sistema-escolar-network
 
 networks:
   sistema-escolar-network:
@@ -21,3 +38,5 @@ networks:
 volumes:
   sistema-escolar-db-data:
     name: sistema-escolar-db-data
+  sistema-escolar-app-data:
+    name: sistema-escolar-app-data
