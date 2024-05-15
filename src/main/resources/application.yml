@@ -10,7 +10,7 @@ spring:
         password: yEcu0vvc3UNcm2M67O46
     jpa:
       hibernate:
-          ddl-auto: create
+          ddl-auto: create-drop
 
 logging:
     level:
