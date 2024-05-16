@@ -1,9 +1,17 @@
 package dev.carm.sistemaescolar.dto;
 
-public record MenuDto (
-    Long id,
-    Long parentId,
-    String name,
-    String path,
-    boolean active
-) {}
+import lombok.Value;
+import lombok.With;
+
+import java.util.Collection;
+
+@Value
+public class MenuDto {
+    Long id;
+    Long parentId;
+    String name;
+    String path;
+    boolean active;
+    @With
+    Collection<MenuDto> subMenu;
+}
