@@ -1,6 +1,6 @@
 package dev.carm.sistemaescolar.entity;
 
-import dev.carm.sistemaescolar.value.ActivityType;
+import dev.carm.sistemaescolar.values.ActivityType;
 import jakarta.persistence.*;
 import lombok.Data;
 

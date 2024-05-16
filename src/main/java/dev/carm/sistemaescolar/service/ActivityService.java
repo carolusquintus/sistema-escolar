@@ -1,9 +1,8 @@
 package dev.carm.sistemaescolar.service;
 
 import dev.carm.sistemaescolar.dto.ActivityDto;
-import dev.carm.sistemaescolar.entity.Activity;
 import dev.carm.sistemaescolar.mapper.ActivityMapper;
-import dev.carm.sistemaescolar.value.ActivityType;
+import dev.carm.sistemaescolar.values.ActivityType;
 import dev.carm.sistemaescolar.repository.ActivityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

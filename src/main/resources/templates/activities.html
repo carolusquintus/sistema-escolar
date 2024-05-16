@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/base}">
+<head>
+    <title th:text="#{title}"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/starter-template.css}"/>
+</head>
+<body>
+
+<section layout:fragment="content">
+
+    <h1 th:text="${activityType}"></h1>
+
+    <table class="table table-stripped">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th class="text-right">Fecha de inicio</th>
+            <th class="text-right">Fecha de finalización</th>
+        </tr>
+        <tr th:each="activity : ${activities}">
+            <td th:text="${activity.id}"></td>
+            <td th:text="${activity.name}"></td>
+            <td class="text-right" th:text="${#temporals.format(activity.initDateTime, 'dd/MMM/yyyy HH:mm')}"></td>
+            <td class="text-right" th:text="${#temporals.format(activity.endDateTime, 'dd/MMM/yyyy HH:mm')}"></td>
+        </tr>
+    </table>
+
+</section>
+
+<th:block layout:include="fragments/footer"/>
+
+<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+
+</body>
+</html>
